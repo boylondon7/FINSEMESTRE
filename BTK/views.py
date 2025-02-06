@@ -108,3 +108,6 @@ def ajout_facture(request):
         return redirect('liste_factures')
     achats = Achat.objects.all()
     return render(request, 'factures/ajout.html', {'achats': achats})
+#Index
+def index(request):
+    return render(request, 'index.html')
