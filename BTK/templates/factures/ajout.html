@@ -7,18 +7,21 @@
         <h1>AJOUTER UNE FACTURE</h1>
         <form method="post">
             {% csrf_token %}
-            <div class="mb-3">
-                <label for="nom" class="form-label">date </label>
-                <input type="text" class="form-control" id="nom" name="nom" required>
-            </div>
-            <div class="mb-3">
-                <label for="total" class="form-label">total </label>
-                <input type="int" class="form-control" id="total" name="total" required>
-            </div>
+
             <div class="mb-3">
                 <label for="achat" class="form-label">achat</label>
                 <input type="text" class="form-control" id="achat" name="achat" required>
             </div>
+
+            <div class="mb-3">
+                <label for="date" class="form-label">date </label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="mb-3">
+                <label for="total" class="form-label">total </label>
+                <input type="number" class="form-control" id="total" name="total" required>
+            </div>
+          
             <button type="submit" class="btn btn-success">Ajouter</button>
             <a href="{% url 'liste_factures' %}" class="btn btn-secondary">Retour</a>
         </form>

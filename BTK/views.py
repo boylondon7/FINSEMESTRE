@@ -104,7 +104,7 @@ def ajout_facture(request):
         date = request.POST['date']
         total = request.POST['total']
         achat = Achat.objects.get(id=achat_id)
-        Facture.objects.create(achat=achat, date=date, total=total)
+        Facture.objects.create(achat = achat, date = date, total = total)
         return redirect('liste_factures')
     achats = Achat.objects.all()
     return render(request, 'factures/ajout.html', {'achats': achats})
