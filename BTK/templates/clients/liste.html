@@ -8,14 +8,16 @@
         <thead>
             <tr>
                 <th>client_id</th>
-                <th>client</th>
+                <th>nom</th>
+                <th>contact</th>
             </tr>
         </thead>
         <tbody>
-            {% for achat in achats %}
+            {% for client in clients %}
                 <tr>
-                    <td>{{ achat.client_id }}</td>
-                    <td>{{ achat.client }}</td>
+                    <td>{{ client.client_id }}</td>
+                    <td>{{ client.nom}}</td>
+                    <td>{{client.contact}}</td>
                    
                 </tr>
             {% endfor %}
