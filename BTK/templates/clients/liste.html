@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Liste des Achats{% endblock %}
+
+{% block content %}
+    <h1>Liste des Factures</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>client_id</th>
+                <th>client</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for achat in achats %}
+                <tr>
+                    <td>{{ achat.client_id }}</td>
+                    <td>{{ achat.client }}</td>
+                   
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'ajout_achat' %}" class="btn btn-primary">Ajouter un Achat</a>
+{% endblock %}
