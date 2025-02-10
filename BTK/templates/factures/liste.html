@@ -16,11 +16,14 @@
         <tbody>
             {% for facture in factures %}
                 <tr>
-                    <td>{{ categorie.achat_id }}</td>
-                    <td>{{ categorie.date }}</td>
+                    <td>{{ facture.achat_id }}</td>
+                    <td>{{ facture.date }}</td>
+                    <td>{{ facture.total }}</td>
+                    <td>{{ facture.achat }}</td>
+
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{% url 'ajout_categorie' %}" class="btn btn-primary">Ajouter une catégorie</a>
+    <a href="{% url 'ajout_facture' %}" class="btn btn-primary">Ajouter une Facture</a>
 {% endblock %}
