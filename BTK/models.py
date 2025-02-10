@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-from django.db import models
+
 
 class Categorie(models.Model):
     nom = models.CharField(max_length=255)

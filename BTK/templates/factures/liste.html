@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 
-{% block title %}Liste des Catégories{% endblock %}
+{% block title %}Liste des Factures{% endblock %}
 
 {% block content %}
-    <h1>Liste des Catégories</h1>
+    <h1>Liste des Factures</h1>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nom</th>
+                <th>achat_id</th>
+                <th>date</th>
+                <th>total</th>
+                <th>achat</th>
             </tr>
         </thead>
         <tbody>
-            {% for categorie in categories %}
+            {% for facture in factures %}
                 <tr>
-                    <td>{{ categorie.id }}</td>
-                    <td>{{ categorie.nom }}</td>
+                    <td>{{ categorie.achat_id }}</td>
+                    <td>{{ categorie.date }}</td>
                 </tr>
             {% endfor %}
         </tbody>

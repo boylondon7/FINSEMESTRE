@@ -1,24 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %}Liste des Catégories{% endblock %}
+{% block title %}AJOUTER UNE CATEGORIE{% endblock %}
 
 {% block content %}
-    <h1>Liste des Catégories</h1>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nom</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for categorie in categories %}
-                <tr>
-                    <td>{{ categorie.id }}</td>
-                    <td>{{ categorie.nom }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <a href="{% url 'ajout_categorie' %}" class="btn btn-primary">Ajouter une catégorie</a>
+    <div class="container">
+        <h1>AJOUTER UNE CATEGORIE</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="nom" class="form-label">Nom de la Catégorie</label>
+                <input type="text" class="form-control" id="nom" name="nom" required>
+            </div>
+            <button type="submit" class="btn btn-success">Ajouter</button>
+            <a href="{% url 'liste_categories' %}" class="btn btn-secondary">Retour</a>
+        </form>
+    </div>
 {% endblock %}

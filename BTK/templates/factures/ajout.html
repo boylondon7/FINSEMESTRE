@@ -1,26 +1,27 @@
 {% extends 'base.html' %}
 
-{% block title %}LISTE DES FACTURES{% endblock %}
+{% block title %}AJOUTER UNE FACTURE {% endblock %}
 
 {% block content %}
-    <h1>LISTE DES FACTURES</h1>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nom</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for categorie in categories %}
-                <tr>
-                    <td>{{ categorie.id }}</td>
-                    <td>{{ categorie.nom }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <a href="{% url 'ajout_categorie' %}" class="btn btn-primary">Ajouter une catégorie</a>
+    <div class="container">
+        <h1>AJOUTER UNE FACTURE</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="nom" class="form-label">date </label>
+                <input type="text" class="form-control" id="nom" name="nom" required>
+            </div>
+            <div class="mb-3">
+                <label for="total" class="form-label">total </label>
+                <input type="int" class="form-control" id="total" name="total" required>
+            </div>
+            <div class="mb-3">
+                <label for="achat" class="form-label">achat</label>
+                <input type="text" class="form-control" id="achat" name="achat" required>
+            </div>
+            <button type="submit" class="btn btn-success">Ajouter</button>
+            <a href="{% url 'liste_factures' %}" class="btn btn-secondary">Retour</a>
+        </form>
+    </div>
 {% endblock %}
-
 
