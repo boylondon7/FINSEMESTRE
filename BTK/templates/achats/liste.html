@@ -1,25 +1,40 @@
+{# achats/liste.html #}
 {% extends 'base.html' %}
 
-{% block title %}Liste des Achats{% endblock %}
+{% block title %}Liste des achats{% endblock %}
 
 {% block content %}
-    <h1>Liste des Factures</h1>
+<div class="container">
+    <h1>Liste des achats</h1>
+    <a href="{% url 'ajout_achat' %}" class="btn btn-success mb-3">Ajouter un achat</a>
+    
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>client_id</th>
-                <th>client</th>
+                <th>ID</th>
+                <th>Client</th>
+                <th>Date</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             {% for achat in achats %}
-                <tr>
-                    <td>{{ achat.client_id }}</td>
-                    <td>{{ achat.client }}</td>
-                   
-                </tr>
+            <tr>
+                <td>{{ achat.id }}</td>
+                <td>{{ achat.client.nom }}</td>
+                <td>{{ achat.date }}</td>
+                <td>
+                    <a href="{% url 'modifier_achat' achat.id %}" class="btn btn-warning btn-sm">Modifier</a>
+                    <a href="{% url 'supprimer_achat' achat.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet achat?')">Supprimer</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center">Aucun achat trouvé</td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{% url 'ajout_achat' %}" class="btn btn-primary">Ajouter un Achat</a>
+</div>
 {% endblock %}
+
