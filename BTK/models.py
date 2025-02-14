@@ -46,3 +46,6 @@ class Facture(models.Model):
     achat = models.OneToOneField(Achat, on_delete=models.CASCADE, related_name='facture')
     date = models.DateField()
     total = models.FloatField()
+
+
+    

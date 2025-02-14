@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}AJOUTER UN Client {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>AJOUTER UN Panier</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nom_produit">Nom du produit :</label>
+                <select id="nom_produit" name="produit"></select>
+            </div>
+        
+            <div class="form-group">
+                <label for="quantite_panier">Quantité dans le panier :</label>
+                <input type="number" id="quantite_panier" name="quantite" required>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+        </form>
+    </div>
+{% endblock %}
+
