@@ -1,0 +1,19 @@
+{# categories/modifier.html #}
+{% extends 'base.html' %}
+
+{% block title %}Modifier une catégorie{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Modifier une catégorie</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nom">Nom de la catégorie</label>
+            <input type="text" class="form-control" id="nom" name="nom" value="{{ categorie.nom }}" required>
+        </div>
+        <button type="submit" class="btn btn-warning mt-3">Modifier</button>
+        <a href="{% url 'liste_categories' %}" class="btn btn-secondary mt-3">Retour</a>
+    </form>
+</div>
+{% endblock %}
