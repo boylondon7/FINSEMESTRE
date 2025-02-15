@@ -1,0 +1,33 @@
+<!-- transactions/liste.html -->
+{% extends 'base.html' %}
+
+{% block title %}Liste des transactions{% endblock %}
+
+{% block content %}
+    <h1>Liste des transactions</h1>
+    <a href="{% url 'ajout_transaction' %}" class="btn btn-success mb-3">Nouvelle transaction</a>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Achat</th>
+                <th>Montant</th>
+                <th>Type de paiement</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.achat.client.nom }} - {{ transaction.achat.date }}</td>
+                <td>{{ transaction.montant }}€</td>
+                <td>{{ transaction.type_paiement }}</td>
+                <td>
+                    <a href="{% url 'modifier_transaction' transaction.id %}" class="btn btn-warning btn-sm">Modifier</a>
+                    <a href="{% url 'supprimer_transaction' transaction.id %}" class="btn btn-danger btn-sm">Supprimer</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
