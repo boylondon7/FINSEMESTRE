@@ -20,7 +20,7 @@
             {% for transaction in transactions %}
             <tr>
                 <td>{{ transaction.achat.client.nom }} - {{ transaction.achat.date }}</td>
-                <td>{{ transaction.montant }}€</td>
+                <td>{{ transaction.montant }}Francs</td>
                 <td>{{ transaction.type_paiement }}</td>
                 <td>
                     <a href="{% url 'modifier_transaction' transaction.id %}" class="btn btn-warning btn-sm">Modifier</a>

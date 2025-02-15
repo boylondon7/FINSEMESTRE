@@ -45,6 +45,6 @@ urlpatterns = [
     # FACTURES
     path('factures/', views.liste_factures, name="liste_factures"),
     path('factures/nouveau/', views.ajout_facture, name="ajout_facture"),
-    path('factures/voir/', views.voir_facture, name='voir_facture'),
+
 
 ]

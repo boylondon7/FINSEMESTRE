@@ -12,7 +12,7 @@
             <label for="client">Client</label>
             <select class="form-control" id="client" name="client" required>
                 {% for client in clients %}
-                <option value="{{ client.id }}" {% if client.id == achat.client.id %}selected{% endif %}>
+                <option value="{{ client.id }}" {% if client.id = achat.client.id %}selected{% endif %}>
                     {{ client.nom }}
                 </option>
                 {% endfor %}

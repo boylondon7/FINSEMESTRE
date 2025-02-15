@@ -11,7 +11,7 @@
             <label for="achat">Achat</label>
             <select class="form-control" id="achat" name="achat" required>
                 {% for achat in achats %}
-                    <option value="{{ achat.id }}" {% if achat.id == transaction.achat.id %}selected{% endif %}>
+                    <option value="{{ achat.id }}" {% if achat.id = transaction.achat.id %}selected{% endif %}>
                         {{ achat.client.nom }} - {{ achat.date }}
                     </option>
                 {% endfor %}
@@ -24,10 +24,10 @@
         <div class="form-group">
             <label for="type_paiement">Type de paiement</label>
             <select class="form-control" id="type_paiement" name="type_paiement" required>
-                <option value="Espèces" {% if transaction.type_paiement == 'Espèces' %}selected{% endif %}>Espèces</option>
-                <option value="Carte bancaire" {% if transaction.type_paiement == 'Carte bancaire' %}selected{% endif %}>Carte bancaire</option>
-                <option value="Chèque" {% if transaction.type_paiement == 'Chèque' %}selected{% endif %}>Chèque</option>
-                <option value="Virement" {% if transaction.type_paiement == 'Virement' %}selected{% endif %}>Virement</option>
+                <option value="Espèces" {% if transaction.type_paiement = 'Espèces' %}selected{% endif %}>Espèces</option>
+                <option value="Carte bancaire" {% if transaction.type_paiement = 'Carte bancaire' %}selected{% endif %}>Carte bancaire</option>
+                <option value="Chèque" {% if transaction.type_paiement = 'Chèque' %}selected{% endif %}>Chèque</option>
+                <option value="Virement" {% if transaction.type_paiement = 'Virement' %}selected{% endif %}>Virement</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary mt-3">Enregistrer</button>
