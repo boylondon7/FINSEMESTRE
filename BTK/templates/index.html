@@ -15,8 +15,7 @@
                     <p class="card-text">Gérez les catégories des produits.</p>
                     <a href="{% url 'liste_categories' %}" class="btn btn-primary">Voir les catégories</a>
                     <a href="{% url 'ajout_categorie' %}" class="btn btn-success">Ajouter</a>
-                    <a href="{% url 'supprimer_categorie' %}" class="btn btn-success">Ajouter</a>
-                    <a href="{% url 'modifier_categorie' %}" class="btn btn-success">Modifier</a>
+                
 
                 </div>
             </div>
@@ -30,8 +29,7 @@
                     <p class="card-text">Gérez les produits de votre boutique.</p>
                     <a href="{% url 'liste_produits' %}" class="btn btn-primary">Voir les produits</a>
                     <a href="{% url 'ajout_produit' %}" class="btn btn-success">Ajouter</a>
-                    <a href="{% url 'supprimer_produit' %}" class="btn btn-success">Supprimer</a>
-                    <a href="{% url 'modifier_produit' %}" class="btn btn-success">Modifier</a>
+                   
                 </div>
             </div>
         </div>
@@ -44,8 +42,7 @@
                     <p class="card-text">Gérez les clients de la boutique.</p>
                     <a href="{% url 'liste_clients' %}" class="btn btn-primary">Voir les clients</a>
                     <a href="{% url 'ajout_client' %}" class="btn btn-success">Ajouter</a>
-                    <a href="{% url 'supprimer_client' %}" class="btn btn-success">Supprimer</a>
-                    <a href="{% url 'modifier_client' %}" class="btn btn-success">Modifier</a>
+                    
                 </div>
             </div>
         </div>
@@ -60,8 +57,7 @@
                     <p class="card-text">Suivez les achats des clients.</p>
                     <a href="{% url 'liste_achats' %}" class="btn btn-primary">Voir les achats</a>
                     <a href="{% url 'ajout_achat' %}" class="btn btn-success">Ajouter</a>
-                    <a href="{% url 'supprimer_achat' %}" class="btn btn-success">Supprimer</a>
-                    <a href="{% url 'modifier_achat' %}" class="btn btn-success">Modifier</a>
+                    
                     
 
                 </div>
@@ -76,8 +72,19 @@
                     <p class="card-text">Suivez les paiements des clients.</p>
                     <a href="{% url 'liste_transactions' %}" class="btn btn-primary">Voir les transactions</a>
                     <a href="{% url 'ajout_transaction' %}" class="btn btn-success">Ajouter</a>
-                    <a href="{% url 'supprimer_transaction' %}" class="btn btn-success">supprimer</a>
-                    <a href="{% url 'modifier_transaction' %}" class="btn btn-success">Modifier</a>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Paniers -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Paniers</h5>
+                    <p class="card-text">Voici les Paniers des clients.</p>
+                    <a href="{% url 'liste_paniers' %}" class="btn btn-primary">Voir les paniers</a>
+                    <a href="{% url 'ajout_panier' %}" class="btn btn-success">Ajouter</a>
                 </div>
             </div>
         </div>
