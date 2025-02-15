@@ -19,7 +19,7 @@
             <label for="produit">Produit</label>
             <select class="form-control" id="produit" name="produit" required>
                 {% for produit in produits %}
-                    <option value="{{ produit.id }}">{{ produit.nom }} - {{ produit.prix }}€</option>
+                    <option value="{{ produit.id }}">{{ produit.nom }} - {{ produit.prix }}Francs</option>
                 {% endfor %}
             </select>
         </div>
