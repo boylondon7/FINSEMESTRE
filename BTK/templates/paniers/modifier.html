@@ -1,17 +1,19 @@
-<!-- paniers/ajout.html -->
+<!-- paniers/modifier.html -->
 {% extends 'base.html' %}
 
-{% block title %}Ajouter au panier{% endblock %}
+{% block title %}Modifier le panier{% endblock %}
 
 {% block content %}
-    <h1>Ajouter au panier</h1>
+    <h1>Modifier le panier</h1>
     <form method="post">
         {% csrf_token %}
         <div class="form-group">
             <label for="client">Client</label>
             <select class="form-control" id="client" name="client" required>
                 {% for client in clients %}
-                    <option value="{{ client.id }}">{{ client.nom }}</option>
+                    <option value="{{ client.id }}" {% if client.id == panier.client.id %}selected{% endif %}>
+                        {{ client.nom }}
+                    </option>
                 {% endfor %}
             </select>
         </div>
@@ -19,14 +21,17 @@
             <label for="produit">Produit</label>
             <select class="form-control" id="produit" name="produit" required>
                 {% for produit in produits %}
-                    <option value="{{ produit.id }}">{{ produit.nom }} - {{ produit.prix }}€</option>
+                    <option value="{{ produit.id }}" {% if produit.id == panier.produit.id %}selected{% endif %}>
+                        {{ produit.nom }} - {{ produit.prix }}€
+                    </option>
                 {% endfor %}
             </select>
         </div>
         <div class="form-group">
             <label for="quantite">Quantité</label>
-            <input type="number" class="form-control" id="quantite" name="quantite" min="1" required>
+            <input type="number" class="form-control" id="quantite" name="quantite" value="{{ panier.quantite }}" min="1" required>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Ajouter au panier</button>
+        <button type="submit" class="btn btn-primary mt-3">Enregistrer</button>
     </form>
 {% endblock %}
+
