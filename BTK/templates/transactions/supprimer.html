@@ -1,12 +1,10 @@
-<!-- transactions/supprimer.html -->
 {% extends 'base.html' %}
 
 {% block title %}Supprimer une transaction{% endblock %}
 
 {% block content %}
     <h1>Supprimer une transaction</h1>
-    <p>Êtes-vous sûr de vouloir supprimer la transaction de {{ transaction.montant }}€ pour l'achat de {{ transaction.achat.client.nom }} ?</p>
-    <form method="post">
+    
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Confirmer la suppression</button>
         <a href="{% url 'liste_transactions' %}" class="btn btn-secondary">Annuler</a>
