@@ -4,7 +4,7 @@
 
 {% block content %}
     <h1 class="text-center">Bienvenue dans BTK</h1>
-    <p class="text-center">Gérez vos catégories, produits, clients, achats, transactions et factures facilement.</p>
+   
 
     <div class="row">
         <!-- Catégories -->
@@ -13,26 +13,28 @@
                 <div class="">
                     <h5 class="">CATEGORIES</h5>
                     <p class="">Gérez les catégories des produits.</p>
-                    <a href="{% url 'liste_categories' %}" class="btn btn-success">Voir les catégories</a>
+                    <a href="{% url 'liste_categories' %}" class="btn btn-success">Liste des catégories</a>
                     <a href="{% url 'ajout_categorie' %}" class="btn btn-success">Ajouter</a>
                 
 
                 
             </div>
         </div>
-
+<hr>
         <!-- Produits -->
         <div class="">
             
                 <div class="">
                     <h5 class="">PRODUITS</h5>
                     <p class="">Gérez les produits de votre boutique.</p>
-                    <a href="{% url 'liste_produits' %}" class="btn btn-success">Voir les produits</a>
+                    <a href="{% url 'liste_produits' %}" class="btn btn-success">Liste des  produits</a>
                     <a href="{% url 'ajout_produit' %}" class="btn btn-success">Ajouter</a>
                    
            
             </div>
         </div>
+
+        <hr>
 
         <!-- Clients -->
         <div class="">
@@ -40,7 +42,7 @@
             
                     <h5 class="">CLIENTS</h5>
                     <p class="">Gérez les clients de la boutique.</p>
-                    <a href="{% url 'liste_clients' %}" class="btn btn-success">Voir les clients</a>
+                    <a href="{% url 'liste_clients' %}" class="btn btn-success">Liste des clients</a>
                     <a href="{% url 'ajout_client' %}" class="btn btn-success">Ajouter</a>
                     
              
@@ -49,13 +51,15 @@
     </div>
 
     <div class="">
+
+        <hr>
         <!-- Achats -->
         <div class="">
             <div class="">
                 
                     <h5 class="">ACHATS</h5>
                     <p class="">Suivez les achats des clients.</p>
-                    <a href="{% url 'liste_achats' %}" class="btn btn-success">Voir les achats</a>
+                    <a href="{% url 'liste_achats' %}" class="btn btn-success">Liste des  achats</a>
                     <a href="{% url 'ajout_achat' %}" class="btn btn-success">Ajouter</a>
                     
                     
@@ -63,19 +67,19 @@
                 
             </div>
         </div>
-
+<hr>
         <!-- Transactions -->
         <div class="">
             <div class="">
              
                     <h5 class="">TRANSACTIONS</h5>
                     <p class="">Suivez les paiements des clients.</p>
-                    <a href="{% url 'liste_transactions' %}" class="btn btn-success">Voir les transactions</a>
+                    <a href="{% url 'liste_transactions' %}" class="btn btn-success">Liste des transactions</a>
                     <a href="{% url 'ajout_transaction' %}" class="btn btn-success">Ajouter</a>
                
             </div>
         </div>
-
+<hr>
         
         <!-- Paniers -->
         <div class="">
@@ -83,19 +87,19 @@
               
                     <h5 class="card-title">PANIERS</h5>
                     <p class="card-text">Voici les Paniers des clients.</p>
-                    <a href="{% url 'liste_paniers' %}" class="btn btn-success">Voir les paniers</a>
+                    <a href="{% url 'liste_paniers' %}" class="btn btn-success">Liste des paniers</a>
                     <a href="{% url 'ajout_panier' %}" class="btn btn-success">Ajouter</a>
                 
             </div>
         </div>
-
+<hr>
         <!-- Factures -->
         <div class="">
             <div class="">
               
                     <h5 class="">FACTURES</h5>
                     <p class="">Générez et consultez les factures.</p>
-                    <a href="{% url 'liste_factures' %}" class="btn btn-success">Voir les factures</a>
+                    <a href="{% url 'liste_factures' %}" class="btn btn-success">Liste des factures</a>
                     <a href="{% url 'ajout_facture' %}" class="btn btn-success">Ajouter</a>
            
         </div>
