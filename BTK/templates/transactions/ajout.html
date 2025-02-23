@@ -10,7 +10,7 @@
             <label for="achat">Achat</label>
             <select class="form-control" id="achat" name="achat" required>
                 {% for achat in achats %}
-                    <option value="{{ achat.id }}">{{ achat.client.nom }} - {{ achat.date }}</option>
+                    <option value="{{ achat.id }}">{{ achat.client.nom }}  {{ achat.date }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -22,9 +22,9 @@
             <label for="type_paiement">Type de paiement</label>
             <select class="form-control" id="type_paiement" name="type_paiement" required>
                 <option value="Espèces">Espèces</option>
-                <option value="Carte bancaire">Carte bancaire</option>
-                <option value="Chèque">Chèque</option>
-                <option value="Virement">Virement</option>
+                <option value="Mix">T-money</option>
+                <option value="Flooz">Flooz</option>
+               
             </select>
         </div>
         <button type="submit" class="btn btn-primary mt-3">Enregistrer</button>

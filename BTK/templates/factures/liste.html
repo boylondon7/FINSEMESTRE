@@ -19,7 +19,7 @@
         <tbody>
             {% for facture in factures %}
             <tr>
-                <td>FACT-{{ facture.id }}</td>
+                <td>Facture {{ facture.id }}</td>
                 <td>{{ facture.achat.client.nom }}</td>
                 <td>{{ facture.date }}</td>
                 <td>{{ facture.total }}Francs</td>
