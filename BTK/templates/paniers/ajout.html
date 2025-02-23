@@ -2,15 +2,15 @@
 
 {% block title %}Ajouter au panier{% endblock %}
 
-{% block contentS %}
+{% block content %}
     <h1>Ajouter au panier</h1>
     <form method="post">
         {% csrf_token %}
         <div class="form-group">
             <label for="client">Client</label>
             <select class="form-control" id="client" name="client" required>
-                {% for client in clients %}
-                    <option value="{{ client.id }}">{{ client.nom }}</option>
+                {% for clt in clients %}
+                    <option value="{{ clt.id }}">{{ clt.nom }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -18,7 +18,7 @@
             <label for="produit">Produit</label>
             <select class="form-control" id="produit" name="produit" required>
                 {% for produit in produits %}
-                    <option value="{{ produit.id }}">{{ produit.nom }} - {{ produit.prix }}Francs</option>
+                    <option value="{{ produit.id }}">{{ produit.nom }} - {{ produit.prix }} Francs</option>
                 {% endfor %}
             </select>
         </div>
