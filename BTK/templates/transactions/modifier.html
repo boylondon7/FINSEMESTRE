@@ -10,7 +10,7 @@
             <label for="achat">Achat</label>
             <select class="form-control" id="achat" name="achat" required>
                 {% for achat in achats %}
-                    <option value="{{ achat.id }}" {% if achat.id = transaction.achat.id %}selected{% endif %}>
+                    <option value="{{ achat.id }}" {% if achat.id == transaction.achat.id %}selected{% endif %}>
                         {{ achat.client.nom }} - {{ achat.date }}
                     </option>
                 {% endfor %}
