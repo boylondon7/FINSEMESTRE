@@ -3,7 +3,15 @@
 {% block title %}Accueil{% endblock %}
 
 {% block content %}
-    <h1 class="text-center">Bienvenue dans BTK</h1>
+<h1 class="text-center">Bienvenue dans BTK</h1>
+<div class="fond">
+
+        {% load static %}
+        <img src="{% static 'image/Accueil.jpeg' %}" alt="boutique" class="img-fluid">
+  
+      </div>
+
+    
    
 
     <div class="row">
@@ -104,4 +112,6 @@
            
         </div>
     </div>
+
+    
 {% endblock %}
