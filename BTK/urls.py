@@ -10,6 +10,7 @@ from . import views
 urlpatterns = [
 
     #Accueil
+    #url pour la page d'accueil
     path('', views.index, name="index"), 
     # CATEGORIES
         #url pour l'affichage de la liste des categories
